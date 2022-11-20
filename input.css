@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-hind;
+  }
+}
+
+.nav-footer ul li {
+  @apply leading-[46px];
+}
+
+.nav-footer h6 {
+  @apply mb-[22px] font-medium text-3xl lg:text-xl;
+}
+
+.icon img {
+  @apply mr-2;
+}
+
+section {
+  scroll-behavior: smooth;
+  @apply transition-all duration-1000;
+}
