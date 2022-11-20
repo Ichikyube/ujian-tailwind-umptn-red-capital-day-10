@@ -17,7 +17,7 @@ module.exports = {
         myDarkgradGrey: '#2F2C4A',
         mygradWhite: '#FFFFFF',
         myDarkestShade: '#20202D',
-        myBlack: '#0A093D',
+        myBlack: '#000000',
         myLightGrayishBlue: 'hsl(223, 64%, 98%)',
         myWhite: 'hsl(0, 0%, 100%)'
       }

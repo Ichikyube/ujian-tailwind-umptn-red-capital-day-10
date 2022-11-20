@@ -1690,7 +1690,7 @@ html {
 
 .bg-myBlack {
   --tw-bg-opacity: 1;
-  background-color: rgb(10 9 61 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#ECF7FF\] {
@@ -2091,7 +2091,7 @@ html {
 
 .text-myBlack {
   --tw-text-opacity: 1;
-  color: rgb(10 9 61 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
