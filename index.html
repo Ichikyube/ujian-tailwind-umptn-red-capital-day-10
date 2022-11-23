@@ -75,19 +75,21 @@
                     standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                     scrambled it to make a type specimen book.</p>
                 <button href="#"
-                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white bg-myBlack rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Get
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white bg-myBlack rounded-lg hue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Get
                     Started
                 </button>
             </div>
-            <div class="lg:flex mt-28 block justify-center lg:w-1/2 w-full h-full z-50 relative">
-                <div class="before:bg-[url('img/Ellipse11.svg')] before:-z-40 before:bg-contain before:bg-no-repeat before:absolute before:-top-[1%] before:-left-[4%] before:bg-top lg:before:scale-75 before:w-full before:h-[inherit] 
-                before:animate-spin bg-[url('img/Vector3.svg')] bg-contain bg-center bg-no-repeat w-[120%] h-[108%] -top-[10%] -left-3 absolute"></div>
-                <img class="shadow-xl [-webkit-mask-image:url('img/mask1.svg')] lg:[-webkit-mask-size:80%] [-webkit-mask-position-x:100%] [-webkit-mask-size:contain] w-full  [-webkit-mask-repeat:no-repeat]" src="img/aba559c84fce1e32c229793be34a5ea7.jfif" alt="">
+            <div class="lg:flex mt-28 block justify-center lg:w-1/2 w-full h-full z-50 relative" onmouseover="this.firstElementChild.classList.add('rotate-180', 'translate-x-10', 'before:animate-spin-slow', 'before:rotate-180', 'before:scale-50', '-hue-rotate-30');this.firstElementChild.nextElementSibling .classList.add('-rotate-12', 'scale-110', '[-webkit-mask-position:8px]')"
+            onmouseout="this.firstElementChild.classList.remove('rotate-180', 'translate-x-10', 'before:animate-spin-slow', 'before:rotate-180', 'before:scale-50', '-hue-rotate-30');this.firstElementChild.nextElementSibling.classList.remove('-rotate-12', 'scale-110', 'hue-rotate-60', '[-webkit-mask-position:8px]');">
+                <div class="before:bg-[url('img/Ellipse11.svg')] before:-z-40 before:bg-contain hover:first:-hue-rotate-30 before:bg-no-repeat before:absolute before:-top-[1%] before:-left-[4%] before:bg-top lg:before:scale-75 before:w-full before:h-[inherit] 
+                before:animate-spin bg-[url('img/Vector3.svg')] bg-contain bg-center bg-no-repeat w-[120%] h-[108%] -top-[10%] -left-3 absolute transition-all ease duration-500"></div>
+                <img class="shadow-xl [-webkit-mask-image:url('img/mask1.svg')] transition-all duration-500 lg:[-webkit-mask-size:80%] [-webkit-mask-position-x:100%] [-webkit-mask-size:contain] w-full [-webkit-mask-repeat:no-repeat]" src="img/aba559c84fce1e32c229793be34a5ea7.jfif" alt="">
             </div>
         </div>
     </section>
-    <section class="relative h-[578px]">
-        <div class="absolute gradient-mask-t-0 w-[92vw] h-[578px] -z-20 rounded-tr-[400px] bg-[#ECF7FF] "></div>
+    <section class="relative h-[578px]" onmouseover="this.firstElementChild.classList.add('animate-shadecolor');"
+    onmouseout="this.firstElementChild.classList.remove('animate-shadecolor');">
+        <div class="absolute w-[92vw] h-[578px] bg-contain -z-20 rounded-tr-[400px] bg-[#ECF7FF]"></div>
         <div class="pb-4">
             <div class="container mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                 <h2 class="mb-4 text-4xl pt-24 tracking-tight font-extrabold text-gray-900"> What We Do<br><span class="font-light">For Your <span class="hvr-underline-from-left">Business</span></span></h2>
@@ -146,17 +148,20 @@
                 <script>
                     function mvLeft2() {
                         document.getElementById('carousel-2').scrollLeft = 0;
+                        document.getElementById("car2-right").classList.remove("opacity-10")
+
                         if(document.getElementById('carousel-2').scrollLeft <= 0) {
                             document.getElementById("car2-left").classList.add("opacity-10")
                         }
                     }
+                    var lastpos;
                     function mvRight2() {
-                        if(document.getElementById('carousel-2').scrollLeft < 1000) {
-                            document.getElementById('carousel-2').scrollLeft += 350;
+                        document.getElementById('carousel-2').scrollLeft += 350;
+                        document.getElementById("car2-left").classList.remove("opacity-10");
+                        if (document.getElementById('carousel-2').scrollLeft >= lastpos) {
+                            document.getElementById("car2-right").classList.add("opacity-10")
                         }
-                        if(document.getElementById('carousel-2').scrollLeft > 0) {
-                            document.getElementById("car2-left").classList.remove("opacity-10")
-                        }
+                        lastpos = document.getElementById('carousel-2').scrollLeft;
                     }
                 </script>
             </div>
@@ -240,18 +245,17 @@
             <script>
                 function mvLeft() {
                     document.getElementById('carousel-1').scrollLeft = 0;
-                    if(document.getElementById('carousel-1').scrollLeft <= 0) {
-                        document.getElementById("car1-left").classList.add("opacity-10")
-                    }
+                    document.getElementById("car1-left").classList.add("opacity-10");
+                    document.getElementById("car1-right").classList.remove("opacity-10");
                 }
+                var lastpos;
                 function mvRight() {
-                    if(document.getElementById('carousel-1').scrollLeft < 1000) {
-                        document.getElementById('carousel-1').scrollLeft += 340;
+                    document.getElementById('carousel-1').scrollLeft += 350;
+                    document.getElementById("car1-left").classList.remove("opacity-10");
+                    if (document.getElementById('carousel-1').scrollLeft >= document.getElementById('carousel-2').scrollWidth) {
+                        document.getElementById("car1-right").classList.add("opacity-10")
                     }
-                    if(document.getElementById('carousel-1').scrollLeft > 0) {
-                        document.getElementById("car1-left").classList.remove("opacity-10")
-                    }
-
+                    lastpos = document.getElementById('carousel-2').scrollLeft;
                 }
             </script>
         </div>

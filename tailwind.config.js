@@ -20,6 +20,30 @@ module.exports = {
         myBlack: '#000000',
         myLightGrayishBlue: 'hsl(223, 64%, 98%)',
         myWhite: 'hsl(0, 0%, 100%)'
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'shadecolor': 'gradation 15s ease infinite',
+        'gradienShade': 'gradient 15s ease infinite'
+      },
+      keyframes: {
+        gradient: {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' }
+        },
+        gradation: {
+          '10%':  'gradient-mask-t-90' ,
+          '20%':  'gradient-mask-t-80' ,
+          '30%':  'gradient-mask-t-70' ,
+          '40%':  'gradient-mask-t-60' ,
+          '50%':  'gradient-mask-t-50' ,
+          '60%':  'gradient-mask-t-40' ,
+          '70%':  'gradient-mask-t-30' ,
+          '80%':  'gradient-mask-t-20' ,
+          '90%':  'gradient-mask-t-10' ,
+          '100%':  'gradient-mask-t-0' 
+        }
       }
     },
     container: {
@@ -41,7 +65,7 @@ module.exports = {
     fontFamily: {
       'hind': ['Hind Vadodara'],
       'playfair': ['Playfair Display', 'serif']
-    }
+    },
   },
   plugins: [
     require('flowbite/plugin'),

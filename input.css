@@ -25,7 +25,6 @@ section {
   @apply transition-all duration-1000;
 }
 
-
 /* Underline From Left */
 .hvr-underline-from-left {
   display: inline-block;
